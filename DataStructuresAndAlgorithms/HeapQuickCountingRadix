@@ -1,4 +1,64 @@
 // Heapsort //
+
 // Quicksort //
+
+//*
+Opdelt i to. Partition og rekursiv del.
+
+Loop invariant:
+A[p..i] ≤ pivot
+A[i+1..j-1] > pivot
+
+Array: p er index 0. r er sidste index.
+A = array
+i = p-1
+j = p
+
+Partition: 
+- Pivot er sidste element
+- j (A[i] og A[j]) kører igennem arrayet.
+- Er A[j]>pivot. Sker ingenting og j++;
+- Er A[j]<=pivot. Inkrementer i og byt A[i] og A[j]. j++;
+- Når j == r (sidste index i array). Byt A[r] med A[i+1]
+- Return i+1
+
+≤ pivot | pivot | > pivot
+Fx: A = [3, 1, 2] ||5|| [8, 7, 9]
+pivot = 5
+
+Rekursiv kald:
+- Kald quicksort med de to ender ved siden af pivot. Rekursivt.
+- Base case fejler loopet stopper på quicksort fordi p<r, så udføres partition og rekursiv ikke!
+
+Pseudokode:
+QUICKSORT(A, p, r)
+if p < r
+  q = PARTITION(A,p, r) 
+  QUICKSORT(A, p, q-1)
+  QUICKSORT(A, q+1, r)
+
+Partition(A, p, r)
+x = A[r]
+i = p-1
+for j=p to r-1
+    if A[j] <= x
+      i=i+1
+      swap(A[i],A[j]
+
+swap (A[i+1], A[r])
+return i+1
+
+Time complexity:
+Partition tid: Θ(n)
+
+Quicksort recurrence:
+T(n) = T(m) + T(n-m-1) + Θ(n)
+
+Average: Θ(n log n)
+Worst: Θ(n²)
+
+*//
+
+
 // Counting sort//
 // Rading sort //
