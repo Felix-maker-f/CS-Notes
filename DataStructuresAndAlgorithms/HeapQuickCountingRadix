@@ -90,4 +90,38 @@ Average    = Θ(n + k)
 Worst case = Θ(n + k)
 
 
-// Rading sort //
+// Radix sort //
+KRAV!: Radix Sort requires a stable sorting algorithm to preserve the ordering from previous digit sorts. (STABLE SORTING ALGORITHM COULD BE COUNTING SORT)
+
+Sortér tal ciffer for ciffer fra mindst betydende (LSD) til mest betydende.
+
+For each digit i:
+    sortér arrayet efter digit i
+    (brug en STABLE sort)
+
+Time complexity:
+Θ(d(n + k))
+
+
+n = antal elementer
+k = base (fx 10)
+d = antal cifre
+
+Den er god når:
+d er lille
+k er lille
+
+
+EKS:
+A = [170, 45, 75, 90, 802, 24, 2, 66]
+
+EFTER PASS 1:
+A = [170, 90, 802, 2, 24, 45, 75, 66]
+
+EFTER PASS 2:
+A = [802, 2, 24, 45, 66, 170, 75, 90]
+
+EFTER PASS 3 OG SORTED:
+A = [2, 24, 45, 66, 75, 90, 170, 802]
+
+
