@@ -26,5 +26,60 @@ Time complexity:
 	•	FIFO (First In, First Out)
 	•	pop fra head OG push fra tail
 
+A[1..N]
+head: første element i queue
+tail: næste ledige element
+
+SIMPLIFIED!!!!!
+Enqueue(x):
+A[tail] = x
+tail = tail + 1
+
+Dequeue():
+x = A[head]
+head = head + 1
+
+Queue er tom HVIS head == tail
+
+Time complexity: 
+Enqueue(x): O(1)
+Dequeue(): O(1)
+
+NB. Husk i kursets implementation er queues circular
+
+// Priority queues // 
+Struktur: Array A[1..n] OG Træ A[parent(i)] ≥ A[i]
+
+Hjælpefunktioner som også bruges i heapsort:
+parent(i) = ⌊i/2⌋
+left(i) = 2i
+right(i) = 2i + 1
 
 
+ HEAP-EXTRACT-MAX (Fjerne det største element)
+ Den fjener roden og indsætter sidste element i roden. Og så heapify skubber det største tal i roden.
+ 
+max = A[1]
+A[1] = A[n]
+n = n - 1
+Max-Heapify(A, 1)
+return max
+
+HEAP-INCREASE-KEY (Vælger en node, gør den større og skubber op til rod)
+A[i] = key
+while i > 1 and A[parent(i)] < A[i]:
+    swap A[i] with A[parent(i)]
+    i = parent(i)
+
+MAX-HEAP-SORT (Tilføjer en ny node til træet, men med meget lavt tal, derefter bruges HEAP-increase til at give et tal og give den rigtigep plads i træ/array)
+n = n + 1
+A[n] = -∞
+Heap-Increase-Key(A, n, key)
+
+Time complexity: 
+HEAP-EXTRACT-MAX: O(log n)
+HEAP-INCREASE-KEY: O(log n)
+MAX-HEAP-SORT: O(log n)
+
+
+// Linked lists // 
