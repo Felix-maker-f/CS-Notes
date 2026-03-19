@@ -83,3 +83,43 @@ MAX-HEAP-SORT: O(log n)
 
 
 // Linked lists // 
+🔹 Definition
+	•	En linked list består af noder
+	•	Hver node peger på næste node
+
+🔹 Struktur (singly linked list)
+[key | next]
+[4] → [7] → [2] → NIL
+	•	head → første node
+	•	sidste node → next = NIL
+
+Operationer:
+🔹 INSERT (foran)
+new->next = head;
+head = new;
+
+🔹 INSERT (efter node x)
+new->next = x->next;
+x->next = new;
+
+🔹 DELETE (node x)
+prev->next = x->next;
+
+🔹 SEARCH
+current = head;
+while (current != NULL) {
+    // check key
+    current = current->next;
+}
+
+🔹 Doubly linked list
+[key | prev | next]
+
+Pseudokode i slides!!!
+
+Time complexity:
+Search: O(n)
+Insert: O(1)
+Delete: O(1)
+
+
