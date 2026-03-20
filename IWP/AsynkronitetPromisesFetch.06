@@ -54,3 +54,88 @@ NOTE_ Finally overskriver alle tidligere returns. OG udføres lige meget HVAD!
 
 
 // Timers, Callbacks og Events //
+
+🔥 Core idé
+JavaScript er single-threaded:
+	•	kan kun gøre én ting ad gangen
+
+👉 Derfor:
+	•	ting der tager tid → håndteres asynkront
+
+⏱️ Timers
+setTimeout(() => {
+  console.log("Hej");
+}, 1000);
+
+	•	registrerer en funktion (callback)
+	•	kører ikke med det samme
+	•	kører når:
+	•	tiden er gået
+	•	call stack er tom
+
+👉 0 ms betyder:
+	•	så hurtigt som muligt, ikke “med det samme”
+
+
+🔁 Callbacks
+setTimeout(() => {
+  console.log("Hej");
+}, 1000);
+En callback = en funktion der bliver kaldt senere af systemet
+
+⚙️ Event loop (meget vigtigt)
+1. JS kører synkron kode
+2. Callbacks samles i queue
+3. Når call stack er tom → callbacks køres
+👉 Callback bliver ikke kørt med det samme
+
+📦 Queue vs Call Stack
+	•	Call stack = det der kører lige nu
+	•	Callback queue = det der venter
+
+👉 Regel:
+callbacks kører kun når call stack er tom
+
+
+🖱️ Events
+button.addEventListener("click", () => {
+  console.log("Klik!");
+});
+	•	du registrerer en callback
+	•	browseren kalder den når event sker
+
+👉 Eksempler:
+	•	click
+	•	keypress
+	•	scroll
+
+Timers → sker efter tid
+Events → sker ved bruger/system
+Callbacks → det der køres bagefter
+
+💥 Blocking
+while (true) {}
+👉 stopper:
+	•	timers
+	•	clicks
+	•	alt async
+👉 fordi call stack aldrig bliver tom
+
+💀 Callback hell
+🧠 Definition
+Callback hell = nested callbacks + afhængig async logik
+
+getUser(id, (user) => {
+  getPosts(user, (posts) => {
+    getComments(posts, (comments) => {
+      console.log(comments);
+    });
+  });
+});
+Problemer:
+	•	dyb nesting
+	•	svært at læse
+	•	svært at håndtere fejl
+
+⸻
+
