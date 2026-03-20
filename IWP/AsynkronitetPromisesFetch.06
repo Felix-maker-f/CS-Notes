@@ -1,1 +1,56 @@
+// Exceptions //
+🔥 Hvad er en exception?
 
+En exception er en fejl der:
+	•	stopper normal program execution
+	•	signalerer at noget er gået galt
+
+Fx:
+throw new Error("Noget gik galt");
+
+⚙️ Grundlæggende flow
+try {
+  // kode der kan fejle
+} catch (e) {
+  // håndter fejl
+} finally {
+  // kører altid
+}
+
+	1.	Kode i try kører
+	2.	Hvis en fejl opstår:
+	  •	resten af try stoppes
+	  •	hopper til catch
+	3.	finally kører altid bagefter
+
+Eks. 
+try {
+  throw new Error("Boom");
+  console.log("Hej");
+} catch (e) {
+  console.log("Caught");
+} finally {
+  console.log("Cleanup");
+}
+
+OUTPUT: 
+Caught
+Cleanup
+
+NOTE_ Finally overskriver alle tidligere returns. OG udføres lige meget HVAD!
+
+🧠 Mental model
+	•	throw = 🚨 stop
+	•	catch = håndter fejl
+	•	finally = cleanup (kører altid)
+
+⸻
+
+⚠️ Klassiske fejl
+	•	Glemme at bruge Error objekt
+	•	Bruge exceptions til normal logik
+	•	Bruge return i finally (farligt)
+	•	Tro at return stopper før finally
+
+
+// Timers, Callbacks og Events //
