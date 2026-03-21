@@ -1,0 +1,44 @@
+// Substitution Method //
+
+🎯 Formål
+At finde en asymptotisk bound for en recurrence ved:
+at gætte en løsning og bevise den med induction
+
+	1.	Guess
+T(n) <= c*f(n)
+
+	2.	Induction Hypothesis
+T(m) <= c*f(m) for alle m<n
+
+	3.	Substitute
+	•	Indsæt hypotesen i recurrence
+	•	Erstat rekursive kald (fx T(n/2))
+
+	4.	Simplify
+	•	Saml og omskriv udtryk
+	•	Faktoriser hvis muligt
+
+	5.	Compare
+Vis: 
+T(n) <= c*f(n)
+
+  6. Solve for c
+Find en konstant så uligheden holder
+
+  7.	Base case
+	•	Tjek små værdier (ofte ignoreret i praksis)
+
+
+⚠️ Klassiske fejl
+	•	Starter med forkert side i ulighed
+	•	Glemmer at n/2 < n
+	•	Forkert algebra (meget normalt)
+	•	Tror “det føles rigtigt” er nok uden bevis
+
+1. Guess bound
+2. Assume true for smaller inputs
+3. Substitute into recurrence
+4. Simplify
+5. Show inequality holds
+6. Find constant c
+
