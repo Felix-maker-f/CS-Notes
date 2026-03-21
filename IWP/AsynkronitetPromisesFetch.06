@@ -280,4 +280,33 @@ try/catch = håndter fejl
 Promise.all = parallel
 
 
+// Fetch // 
+🔥 Hvad er fetch?
+fetch = funktion der sender en request til en server
 
+🔥 Hvad returnerer fetch?
+fetch returnerer en Promise med et response-objekt
+
+⚠️ Response er IKKE data
+fetch → response (ikke data!)
+
+🔑 Sådan får du data
+let r = await fetch("/data");
+let data = await r.json();
+
+1. fetch → response
+2. response → data (json() / text())
+
+🔧 7. json() vs text()
+await r.json(); // hvis data er JSON
+await r.text(); // hvis data er tekst
+
+❗ 9. Error nuance
+fetch fejler kun ved netværksfejl
+👉 ikke ved:
+	•	404
+	•	500
+
+fetch = hent data fra server
+→ giver response
+→ brug json()/text() for data
