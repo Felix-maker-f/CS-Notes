@@ -245,3 +245,39 @@ async function f() {
   }
 }
 👉 svarer til .catch() -- await fejl → hop til catch → fortsæt bagefter
+
+🔁 8. Sekventiel vs parallel
+Sekventiel
+let a = await f1();
+let b = await f2();
+👉 én ad gangen
+
+Parallel
+let [a, b] = await Promise.all([f1(), f2()]);
+👉 samtidig
+
+🔗 9. Real use (fetch)
+async function getData() {
+  let r = await fetch("/data");
+  let data = await r.json();
+  console.log(data);
+}
+
+🔄 10. for await (loop)
+for await (let x of promises) {
+  console.log(x);
+}
+👉 betyder: loop + await hver Promise
+
+⚠️ 11. for await vs Promise.all
+for await → én ad gangen
+Promise.all → alle på én gang
+
+🎯 13. Kort opsummering
+async = returnerer Promise
+await = få værdien
+try/catch = håndter fejl
+Promise.all = parallel
+
+
+
