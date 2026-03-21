@@ -137,5 +137,79 @@ Problemer:
 	•	svært at læse
 	•	svært at håndtere fejl
 
-⸻
+
+
+
+// Promise //
+🔥 Hvad er en Promise?
+En Promise er en værdi, der kommer senere
+👉 fx:
+	•	data fra server (fetch)
+	•	timer
+	•	fil læsning
+
+⚙️ States
+pending   → venter
+fulfilled → success (værdi)
+rejected  → fejl
+
+🔑 Grundstruktur
+someAsyncFunction()
+  .then(result => {
+    // success
+  })
+  .catch(error => {
+    // fejl
+  });
+
+💥 DEN VIGTIGSTE REGEL
+.then = “tag værdien og gør noget med den”
+
+🔁 Chaining
+Promise.resolve(2)
+  .then(x => x * 3)
+  .then(x => x + 4)
+  .then(x => console.log(x));
+
+👉 flow:
+2 → 6 → 10 → print
+
+⚠️ Return bestemmer flow
+.then(x => x * 2)        // returnerer værdi
+.then(x => { ... })      // returnerer undefined (hvis ingen return)
+
+Regel: det du returnerer → går videre
+
+
+🔥 Errors (rejection)
+throw "error"; ELLER reject("error");
+
+👉 hopper til: .catch(e => ...)
+
+Error flow: fejl → spring alle .then over → .catch
+
+
+🌐 11. Real use (fetch)
+fetch("/data")
+  .then(r => r.json())
+  .then(data => console.log(data));
+
+👉 flow:
+request → response → data → brug data
+
+🧱 12. Lav din egen Promise
+new Promise((resolve, reject) => {
+  resolve(5);   // success
+  reject("err"); // fejl
+});
+
+🎯 Kort opsummering
+.then  = håndter værdi
+return = send videre
+.catch = håndter fejl
+
+
+
+
+
 
