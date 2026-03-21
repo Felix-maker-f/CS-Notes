@@ -209,7 +209,39 @@ return = send videre
 .catch = håndter fejl
 
 
+// Async/await //
+🔥 Hvad er async/await?
 
+⚙️ async funktion
+async function f() {}
+👉 betyder: funktionen returnerer altid en Promise
 
+🔧 Eksempel
+async function f() {
+  return 5;
+}
+👉 svarer til: Promise.resolve(5);
 
+🔑 await
+let x = await somePromise;
+👉 betyder: vent på Promise → få værdien
 
+⚠️ Uden await
+let x = Promise.resolve(5);
+👉 x er: Promise (ikke værdien!)
+
+💥 4. DEN VIGTIGSTE REGEL
+await success → giver værdi
+await error   → kaster fejl
+
+⚠️ await stopper kun funktionen: await pauser funktionen (ikke hele programmet)
+
+❗ Error handling
+async function f() {
+  try {
+    let x = await something();
+  } catch (e) {
+    console.log(e);
+  }
+}
+👉 svarer til .catch() -- await fejl → hop til catch → fortsæt bagefter
