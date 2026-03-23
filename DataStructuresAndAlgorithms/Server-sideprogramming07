@@ -81,3 +81,102 @@ let reader = res.body.getReader();
 	•	POST kræver:
 	•	korrekt body
 	•	korrekt headers
+
+
+// Client-side storage // 
+🌐 1. Problemet
+	•	HTTP er stateless  ￼
+	•	Serveren husker ikke brugeren mellem requests
+
+👉 derfor skal browseren gemme data
+
+
+📦 2. Typer af storage
+
+🥇 localStorage
+👉 permanent storage i browseren
+
+localStorage.setItem("name", "Felix");
+let name = localStorage.getItem("name");
+✔️ Egenskaber:
+	•	bliver efter refresh
+	•	bliver efter browser lukkes
+	•	key → value (strings)
+
+🥈 sessionStorage
+👉 midlertidig storage
+✔️ Egenskaber:
+	•	lever kun mens tab er åbent
+	•	slettes ved luk
+	•	isoleret per tab
+
+🥉 Cookies
+👉 små data der sendes med hver request  ￼
+document.cookie = "username=Felix";
+✔️ Egenskaber:
+	•	key=value format
+	•	sendes automatisk til server
+	•	kan have expiry
+
+
+Sendes til server?
+localStorage
+❌ nej
+sessionStorage
+❌ nej
+cookies
+✅ ja
+
+🎯 Hvornår bruger man hvad?
+Situation
+UI state (dark mode)
+localStorage!!!
+
+midlertidig data
+sessionStorage!!!
+
+login/session
+cookies!!!
+
+
+🗄️ 3. IndexedDB
+
+👉 avanceret storage (mini database)
+✔️ Bruges til:
+	•	store datamængder
+	•	offline apps
+⚠️ Niveau:
+	•	kun overblik nødvendigt
+	•	kompleks API
+
+🍪 4. Cookie manipulation
+document.cookie = "username=Felix";
+✔️ Husk:
+	•	cookies = string
+	•	flere cookies i samme string
+	•	sendes med requests
+
+🔍 5. Checking cookies (pattern)
+
+👉 typisk flow:
+if (cookie findes) {
+  brug den
+} else {
+  spørg bruger
+  gem cookie
+}
+
+💣 Kritiske takeaways
+	•	HTTP husker ikke → storage nødvendigt
+	•	localStorage = browser only
+	•	cookies = sendes til server
+	•	sessionStorage = midlertidig + tab-bundet
+	•	IndexedDB = avanceret (low priority nu)
+
+Browser:
+  - localStorage / sessionStorage
+  - cookies
+
+Server:
+  - modtager cookies automatisk
+
