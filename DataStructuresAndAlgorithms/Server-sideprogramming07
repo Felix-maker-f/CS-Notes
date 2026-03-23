@@ -67,6 +67,12 @@ fetch("/upload", {
 let reader = res.body.getReader();
 👉 læser data lidt ad gangen
 
+🛑 Abort fetch
+	•	bruges til at stoppe en request
+	•	kræver AbortController
+	•	sender signal til fetch
+	•	abort → Promise bliver rejected 
+
 💣 De vigtigste takeaways
 	•	fetch ≠ data → fetch = Promise
 	•	response ≠ data → skal parses
