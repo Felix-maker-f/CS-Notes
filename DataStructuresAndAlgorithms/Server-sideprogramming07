@@ -1,1 +1,77 @@
+// Fetch //
+🌐 1. Hvad er fetch?
+	•	fetch() bruges til at kommunikere med en server
+	•	Sender en HTTP request (typisk GET eller POST)
+	•	Returnerer et Promise
 
+🔁 2. Grundlæggende flow
+let res = await fetch("/data");
+let data = await res.json();
+
+👉 Flow:
+	1.	fetch() → sender request
+	2.	får response object (ikke data!)
+	3.	.json() → læser data (async)
+
+⚠️ 3. VIGTIGT: fetch giver ikke fejl ved 404
+	•	fetch() fejler kun ved netværksfejl
+	•	404 / 500 = stadig success (Promise resolved)
+Derfor:
+if (!res.ok) {
+  throw new Error("HTTP error");
+}
+
+📦 4. Parsing response
+	•	res.json() → JSON → JS objekt
+	•	res.text() → tekst
+	•	res.formData() → form-data  ￼
+
+👉 alle er async (returnerer Promise)
+
+📤 5. POST (sende data)
+fetch("/users", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name: "Felix" })
+});
+👉 vigtigt, her er hvad der sker:
+	•	body skal være string
+	•	header fortæller format
+
+FormData (til filer / forms)
+
+let formData = new FormData();
+formData.append("file", file);
+
+fetch("/upload", {
+  method: "POST",
+  body: formData
+});
+
+👉 bruges til:
+	•	filer
+	•	HTML forms
+
+🔐 6. CORS
+	•	Browser blokerer requests til andre domæner
+	•	Server skal tillade det via headers  ￼
+
+👉 ellers:
+	•	fetch fejler (Promise rejected)
+
+🌊 7. Streaming (advanced)
+	•	data kommer i chunks (bidder)
+	•	bruges til store filer / progress
+let reader = res.body.getReader();
+👉 læser data lidt ad gangen
+
+💣 De vigtigste takeaways
+	•	fetch ≠ data → fetch = Promise
+	•	response ≠ data → skal parses
+	•	.json() er også async
+	•	res.ok skal tjekkes
+	•	POST kræver:
+	•	korrekt body
+	•	korrekt headers
