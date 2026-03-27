@@ -183,3 +183,67 @@ POST❌
 
 
 
+📝 Frameworks
+
+🔹 Definition
+	•	Framework = kode der allerede er skrevet, så du selv skriver mindre  ￼
+
+🔹 Formål
+	•	gør udvikling nemmere
+	•	sparer tid
+	•	håndterer HTTP requests
+
+🔹 Eksempler
+	•	Express.js
+	•	Koa
+	•	Meteor  ￼
+
+📝 Routing
+🔹 Definition
+	•	Routing = kobler URL + HTTP method til handling i server
+
+🔹 Struktur
+app.METHOD(PATH, HANDLER);
+
+🔹 Eksempel
+app.get('/users', ...)
+👉 Når GET /users kaldes → kode køres
+
+📝 Response (server svar)
+
+🔹 Metoder
+	•	res.send() → sender data
+	•	res.json() → sender JSON
+	•	res.sendStatus() → sender statuskode  ￼
+
+📝 OpenAPI
+
+🔹 Definition
+	•	Beskrivelse af en API (endpoints, methods, inputs, outputs)  ￼
+
+🔹 Indeholder
+	•	paths (endpoints)
+	•	operations (GET, POST osv.)
+	•	responses (statuskoder + data)
+
+🔹 Formål
+	•	dokumentation
+	•	standardisering
+	•	mulighed for code generation
+
+📝 API Code Generation
+
+🔹 Definition
+	•	Automatisk generering af server/client kode ud fra OpenAPI
+
+🔹 Fordele
+	•	sparer tid
+	•	færre fejl
+	•	ensartet struktur
+
+🎯 Kort opsummering
+	•	Framework → gør udvikling nemmere
+	•	Routing → URL + method → handling
+	•	Response → server sender data
+	•	OpenAPI → beskrivelse af API
+	•	Code generation → auto kode
