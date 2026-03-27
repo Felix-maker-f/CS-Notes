@@ -72,4 +72,58 @@ data: value
 	•	real-time apps
 
 
+📝 Service Oriented Applications (SOA)
+🔹 Definition
+	•	System opdeles i små services
+	•	Services kommunikerer over netværket  ￼
+
+🔹 Egenskaber
+	•	Black box → man kender kun input/output
+	•	Loose coupling → services er uafhængige
+	•	Reusable → kan genbruges
+	•	Stateless → gemmer ikke state mellem requests  ￼
+
+📝 Roller i SOA
+🔹 Service provider
+	•	tilbyder en service (server)
+🔹 Service consumer
+	•	bruger servicen (client)
+🔹 Service broker
+	•	registry over services  ￼
+
+📝 Stateless
+🔹 Definition
+	•	Server gemmer ikke information mellem requests
+	•	Hver request skal indeholde al nødvendig data  ￼
+🔹 Fordele
+	•	load balancing
+	•	robusthed
+	•	færre fejl  ￼
+
+📝 Idempotent operations
+🔹 Definition
+	•	Samme request flere gange → samme effekt på server  ￼
+
+🔹 Eksempler
+	•	GET ✔️
+	•	PUT ✔️
+	•	DELETE ✔️
+	•	POST ❌
+
+
+📝 HATEOAS
+🔹 Definition
+	•	Server sender links med i response
+	•	Client kan navigere API dynamisk  ￼
+🔹 Formål
+	•	Client behøver ikke kende API på forhånd
+	•	API kan ændres uden at bryde client
+
+🎯 Kort opsummering (hurtig repetition)
+	•	SOA → system opdeles i services
+	•	Provider → server
+	•	Consumer → client
+	•	Stateless → ingen hukommelse
+	•	Idempotent → samme effekt
+	•	HATEOAS → server guider client
 
