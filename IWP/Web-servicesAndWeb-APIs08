@@ -127,3 +127,59 @@ data: value
 	•	Idempotent → samme effekt
 	•	HATEOAS → server guider client
 
+
+
+📝 REST (Representational State Transfer)
+
+🔹 Grundidé
+	•	REST = brug HTTP methods til at arbejde med data (resources) via URLs  ￼
+
+
+🔹 Resources
+	•	Data på server (fx users, messages, products)
+	•	Identificeres med URLs:
+	•	/users
+	•	/users/1
+
+
+HTTP Methods:
+GET
+hent data
+
+POST
+opret data
+
+PUT
+erstat data
+
+PATCH
+ændr delvist
+
+DELETE
+slet data
+
+🔹 Eksempler
+	•	GET /users → hent users
+	•	POST /users → opret user
+	•	DELETE /users/1 → slet user
+
+🔹 PUT vs PATCH
+	•	PUT → erstatter hele resource
+	•	PATCH → ændrer kun en del
+
+🔹 Stateless
+	•	Server husker ikke tidligere requests
+	•	Client sender al info hver gang  ￼
+
+Method Idempotent?
+GET✔️
+PUT✔️
+DELETE✔️
+POST❌
+
+🔹 HATEOAS
+	•	Server sender links med i response
+	•	Client ved hvad den kan gøre næste  ￼
+
+
+
