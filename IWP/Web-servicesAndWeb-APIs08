@@ -1,1 +1,75 @@
+📝 SSE (Server-Sent Events)
+🔹 Grundidé
+	•	Client laver en HTTP request
+	•	Connection holdes åben
+	•	Server sender data løbende
+
+🔹 Hvordan det fungerer
+	•	Server svarer ikke én gang → men over tid
+	•	Data sendes i små “bursts”
+	•	Hvis connection lukker → client åbner igen
+
+🔹 Retning
+	•	Kun server → client
+
+🔹 Client-side
+	•	EventSource bruges
+	•	modtager events løbende
+
+🔹 Server-side
+	•	gemmer clients (connections)
+	•	sender data med format:
+event: type
+data: value
+
+🔹 Fordele
+	•	simpelt
+	•	lav delay
+
+🔹 Ulemper
+	•	bruger server resources (åbne connections)
+
+🔹 Use cases
+	•	live updates
+	•	aktiekurser
+	•	notifikationer
+
+📝 WebSockets
+🔹 Grundidé
+	•	Persistent connection
+	•	Begge kan sende data
+🔹 Egenskaber
+	•	full duplex (begge veje)
+	•	low latency
+	•	kan sende string og binary
+
+🔹 Hvordan det fungerer
+	1.	Starter som HTTP request (handshake)
+	2.	Opgraderes til WebSocket
+	3.	Derefter fri kommunikation
+
+🔹 States
+	•	CONNECTING
+	•	OPEN
+	•	CLOSING
+	•	CLOSED
+
+🔹 Praktisk
+	•	bruger ws:// eller wss://
+	•	kræver WebSocket protocol
+
+🔹 Fordele
+	•	real-time begge veje
+	•	meget fleksibelt
+
+🔹 Ulemper
+	•	mere komplekst setup
+	•	kræver ekstra håndtering
+
+🔹 Use cases
+	•	chat
+	•	multiplayer
+	•	real-time apps
+
+
 
