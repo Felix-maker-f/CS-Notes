@@ -1,0 +1,35 @@
+// More on fetch // 
+Parsing af svar
+
+.json() — parse svaret som et JavaScript-objekt
+.text() — parse svaret som tekst
+Begge returnerer en ny Promise, derfor to .then()
+
+Streaming
+
+Bruges når data er stor og du vil vise progress
+Brug .getReader() i stedet for .json() eller .text()
+Behøver ikke forstå koden i detaljer
+
+POST
+
+Bruges til at sende data til serveren
+Kræver method: "POST" og body med data
+Sender du JSON, tilføj headers: {"Content-Type": "application/json"} så serveren ved hvad den modtager
+JSON.stringify() konverterer JavaScript-objekt til JSON-streng
+
+FormData
+
+Alternativ til JSON når du sender formular-data eller filer
+Låser encoding til multipart/form-data
+
+CORS
+
+Browseren tillader kun fetch() til samme server som hjemmesiden kommer fra
+Browseren tilføjer automatisk en "Origin" header
+Serveren skal svare med "Access-Control-Allow-Origin" — ellers fejler din Promise
+
+Abort
+
+Brug AbortController til at annullere et fetch-kald
+Nyttigt hvis du vil sætte en tidsbegrænsning på en request
