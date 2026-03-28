@@ -33,3 +33,27 @@ Abort
 
 Brug AbortController til at annullere et fetch-kald
 Nyttigt hvis du vil sætte en tidsbegrænsning på en request
+
+
+// Client-side storage //
+
+Hvorfor overhovedet gemme data i browseren?
+HTTP er stateless — serveren husker ingenting. Client-side storage løser det ved at gemme data lokalt i browseren.
+localStorage vs sessionStorage
+
+Begge gemmer data som key-value par i browseren
+localStorage — bliver der indtil du sletter det manuelt
+sessionStorage — slettes når du lukker fanen/vinduet
+
+IndexedDB
+
+En mere avanceret database i browseren
+Bruges til store mængder struktureret data
+Async API — vigtigt at vide den eksisterer
+
+Cookies
+
+Gemmes i browseren, men sendes automatisk med ved hver HTTP request
+Serveren kan derfor huske hvem du er på tværs af requests
+Har en udløbsdato — uden den slettes de når browseren lukkes
+Ulempe: sendes med ved alle requests, også når det er unødvendigt
