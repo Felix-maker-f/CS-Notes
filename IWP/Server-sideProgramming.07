@@ -57,3 +57,26 @@ Gemmes i browseren, men sendes automatisk med ved hver HTTP request
 Serveren kan derfor huske hvem du er på tværs af requests
 Har en udløbsdato — uden den slettes de når browseren lukkes
 Ulempe: sendes med ved alle requests, også når det er unødvendigt
+
+
+// Non-client-side programming: Node.js //
+
+Hvad er Node.js?
+JavaScript der kører uden for browseren — fx på en server eller din egen computer. Du kører det med node fil.js.
+Ingen document eller window
+De findes ikke i Node.js — det er browser-ting. I stedet har du process som giver dig adgang til dit computer-miljø.
+
+Event loop
+JavaScript kører på én tråd. Event loop'en håndterer opgaver i kø så Node.js kan håndtere mange ting "samtidig". Undgå altid synkrone operationer der blokerer tråden.
+
+Program lifecycle
+Et Node.js program kører indtil alle callbacks er færdige. En server kører i teorien for evigt fordi den altid venter på nye requests. Stop programmet med process.exit(0) eller CTRL+C.
+
+npm og packages
+npm er Node.js's package manager — tænk på det som #include i C, men du skal først hente pakken med npm install. import og export bruges til at dele kode mellem filer.
+
+Filsystem
+Node.js kan læse og skrive filer med fs modulet. Brug altid den asynkrone version — synkron blokerer hele tråden og fryser serveren for alle andre brugere.
+
+Streams og Buffers
+Rå data fra filer eller netværk kommer som bytes (Buffer). Skal konverteres til tekst før du kan arbejde med det.
