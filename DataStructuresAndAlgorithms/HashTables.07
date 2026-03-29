@@ -4,7 +4,6 @@
 - Idea: index = k  
 - Each key has its own slot  
 - No collisions  
-- Time: O(1)  
 - Problem: requires large array (size = key universe)
 
 ## 🔹 Hash Tables (Idea)
@@ -21,8 +20,7 @@
 ## 🔹 Chaining
 - Structure:
   T = array  
-  T[i] = linked list  
-
+  T[i] = linked list or doubly linked list
 - Multiple elements stored in same index
 
 Example:
@@ -47,7 +45,6 @@ T[1] → [21 → 31]
 - α = n / m  
   n = number of elements  
   m = table size  
-
 - Represents average chain length
 
 ## 🔹 Runtime (Chaining)
