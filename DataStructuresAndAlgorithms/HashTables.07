@@ -1,0 +1,68 @@
+# Hash Tables – Notes (Slide 1–25)
+
+## 🔹 Direct Addressing
+- Idea: index = k  
+- Each key has its own slot  
+- No collisions  
+- Time: O(1)  
+- Problem: requires large array (size = key universe)
+
+## 🔹 Hash Tables (Idea)
+- Use hash function:  
+  h(k) → index in table  
+- Reduces large key universe to smaller array  
+- Problem: collisions
+
+## 🔹 Collisions
+- Occurs when:
+  h(k1) = h(k2), k1 ≠ k2  
+- Unavoidable (pigeonhole principle)
+
+## 🔹 Chaining
+- Structure:
+  T = array  
+  T[i] = linked list  
+
+- Multiple elements stored in same index
+
+Example:
+T[1] → [21 → 31]
+
+## 🔹 Operations (Chaining)
+
+### Insert:
+- Compute h(k)
+- Insert element in T[h(k)]
+- Typically insert at head → O(1)
+
+### Search:
+- Compute h(k)
+- Traverse linked list in T[h(k)]
+
+### Delete:
+- Remove element from linked list
+- O(1) if doubly linked list (given pointer)
+
+## 🔹 Load Factor
+- α = n / m  
+  n = number of elements  
+  m = table size  
+
+- Represents average chain length
+
+## 🔹 Runtime (Chaining)
+- Insert: O(1)
+- Search: O(1 + α)
+- Delete: O(1 + α)
+
+## 🔹 Key Insight
+- Good hash function → small α → fast  
+- Bad hash function → large α → slow  
+
+## 🔹 When is it O(1)?
+- When α is constant (bounded)
+- If α grows with n → runtime becomes O(n)
+
+## 🔹 Intuition
+- Hash table = array (fast access) + linked lists (handle collisions)
+- Performance depends on distribution of keys
