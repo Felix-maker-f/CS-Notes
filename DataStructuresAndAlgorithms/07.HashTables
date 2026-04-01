@@ -80,6 +80,8 @@ h(k,i) = (h1(k) + i*h2(k)) mod m
 🔹 Probe
 	•	Ét forsøg på at finde slot
 👉 “tjek et index”
+Plejer at skrives som bogstavet: i
+
 
 🔹 Load factor
 a = n/m
