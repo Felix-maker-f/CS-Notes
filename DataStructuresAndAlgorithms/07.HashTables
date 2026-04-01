@@ -1,1 +1,122 @@
+🔹 Hash tables
+	•	Datastruktur der mapper keys → index i array
+	•	Bruges til hurtig search, insert, delete
 
+👉 Ide:
+h(k) -> index
+
+⸻
+
+🔹 Direct addressing
+	•	Key = index direkte
+	•	Kræver stort array hvis key-univers er stort
+
+👉 Problem: spilder plads
+
+⸻
+
+🔹 Hashing
+	•	Reducerer key til index via hash function
+h(k)
+
+👉 Formål: spare plads
+
+⸻
+
+🔹 Collision
+	•	Flere keys får samme index
+
+👉 uundgåeligt når n > m
+
+🔹 Collision handling
+
+⸻
+
+🔸 Chaining
+	•	Hvert slot indeholder en linked list
+	•	Flere keys kan ligge samme sted
+
+👉 Fordel: simpelt
+👉 Ulempe: kan blive langsomt hvis lister lange
+
+⸻
+
+🔸 Open addressing
+	•	Kun 1 element per slot
+	•	Ved collision → find nyt slot via probing
+
+👉 Vigtigt:
+a = n/m <= 1
+
+🔹 Probing (open addressing)
+
+⸻
+
+🔸 Linear probing
+
+h(k,i) = (h(k) + i) mod m
+	•	Går én frem ad gangen
+
+👉 Problem: primary clustering
+
+⸻
+
+🔸 Quadratic probing
+
+h(k,i) = (h(k) + c1*i + c2*i^2) mod m
+	•	Hopper “mere spredt”
+
+👉 Mindre clustering
+
+⸻
+
+🔸 Double hashing
+
+h(k,i) = (h1(k) + i*h2(k)) mod m
+	•	Bruger to hash functions
+
+👉 Bedst spredning
+
+🔹 Probe
+	•	Ét forsøg på at finde slot
+👉 “tjek et index”
+
+🔹 Load factor
+a = n/m
+	•	Hvor fyldt tabellen er
+👉 høj α → flere collisions → langsommere
+
+HELT KONKRET: Hvor mange keys pr. slot der i gennemsnit er!!!!
+
+🔹 Time complexity (average)
+
+Chaining
+	•	O(1 + a)
+
+Open addressing
+	•	afhænger af α, O(m)
+
+👉 unsuccessful:
+1/1-a = antal probes
+👉 betyder:
+hvor mange probes du i gennemsnit laver, når elementet ikke findes
+
+👉 successful:
+1/a * ln *1/1-a antal probes
+👉 betyder:
+hvor mange probes du i gennemsnit laver, når elementet findes
+
+🔹 Worst case
+	•	Chaining: O(n)
+	•	Open addressing: O(m)
+
+🔹 Uniform hashing (antagelse)
+	•	Keys fordeles jævnt tilfældigt i tabellen
+👉 bruges til analyse
+
+
+🔹 Vigtige pointer
+	•	Hashing = tradeoff mellem plads og collisions
+	•	God hash function = færre collisions
+	•	Open addressing kræver lav load factor
+	•	Chaining er mere robust
