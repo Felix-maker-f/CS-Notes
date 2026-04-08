@@ -1,1 +1,122 @@
+🔑 1. Binary Search Tree (recap)
+	•	Venstre subtree: < node
+	•	Højre subtree: > node
+
+Jo længere ned i træet, jo flere constraints, de følges ned resten af træet.
+👉 vigtigt:
+Det gælder hele vejen ned (ikke kun direkte børn)
+
+👉 Inorder traversal → sorteret rækkefølge
+
+⸻
+
+🔁 2. Traversals
+Inorder: left → node → right
+👉 giver sorted output
+
+Preorder: node → left → right
+👉 bruges til:
+	•	kopiere træ
+	•	gemme struktur
+
+Postorder: left → right → node
+👉 bruges til:
+	•	slette træ
+	•	evaluere expressions
+
+Alle traversals:
+Θ(n)
+👉 besøger hver node én gang
+
+⸻
+
+🔎 4. Successor
+🔑 Definition: næste største element i BST
+
+🎯 Case 1: højre subtree findes
+👉 successor = minimum i højre subtree
+
+🎯 Case 2: ingen højre subtree
+👉 gå op i træet:
+	•	find første ancestor
+	•	hvor du kommer fra venstre side
+👉 det er successor
+
+🧠 Intuition
+	•	højre findes → gå ned
+	•	ellers → gå op
+
+⸻
+
+🧱 BST DELETE
+🎯 Mål
+
+Fjern en node uden at bryde BST-egenskaben.
+
+🔴 Case 1 — ingen børn (leaf)
+	•	Node fjernes direkte
+	•	Parent peger nu på NIL
+
+
+🟡 Case 2 — ét barn
+	•	Barnet overtager nodens plads
+	•	Parent peger direkte på barnet
+
+🔥 Case 3 — to børn
+
+🔑 Idé
+
+Erstat noden med dens successor
+
+📍 Steps
+	1.	Find successor
+	•	mindste i højre subtree
+	2.	Flyt successor op i nodens plads
+	3.	Fjern successor fra sin gamle position
+	•	(den har maks ét barn → nem at slette)
+
+🧠 Intuition
+	•	Case 1 → slet
+	•	Case 2 → bypass
+	•	Case 3 → “find næste tal og sæt det ind”
+
+⚠️ Vigtigt
+	•	Successor er valgt fordi:
+→ den er den mindste større værdi
+→ så BST stadig er korrekt
+
+
+🎯 Kort version
+	•	0 børn → slet
+	•	1 barn → løft barnet op
+	•	2 børn → erstat med successor
+
+⸻
+
+⚖️ 6. Balanced BST (idé)
+👉 tilfældig insertion:
+forventet højde = O(log n)
+
+👉 men:
+almindelig BST kan blive skæv = O(n)
+
+⸻
+
+🔥 7. Rotation (SLIDE 45 STOP HER)
+
+🔑 Definition
+
+lokal ændring der bevarer BST property
+
+🎯 Formål
+👉 gøre træ mindre skævt
+
+🔄 To typer
+	•	left rotation
+	•	right rotation
+
+🧠 Intuition
+👉 “løft en node op”
+👉 “skub en ned”
+⸻
 
