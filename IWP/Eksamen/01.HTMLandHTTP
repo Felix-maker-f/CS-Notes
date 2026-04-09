@@ -98,3 +98,25 @@ En celle med overskrift.
 <td> </td>:
 En celle med data (selve værdierne)
 
+
+// Forms //
+<form> </form>:
+Boks til at indsamle brugerdata som er indtastet, eller til at sende faktisk også. Det inde i tagget kan du sende, 
+bare specifer action(hvor data skal hen) og method(hvordan det sendes).
+
+<form>
+  <input name="username">
+  <button>Send</button>
+</form>
+Når brugeren trykker sumbit sendes data som default til eget URL, med GET.
+
+<form action="/login" method="POST">
+  <input type="text" name="username">
+  <button>Send</button>
+</form>
+Når brugeren trykker sumbit sendes data til URL i action og med POST method. 
+
+
+
+
+
