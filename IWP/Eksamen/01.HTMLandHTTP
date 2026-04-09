@@ -119,13 +119,29 @@ Når brugeren trykker sumbit sendes data til URL i action og med POST method.
 
 <input>:
 Boks hvor brugeren kan indtaste eller vælge data. 
-
+SKRIVES type ikke VÆLGES TEXT SOM DEFAULT
 <input type="text"> tekstfelt
 <input type="number"> talfelt
 <input type="submit"> knap der sender formularen (alt data indtastet inden)
 
+name:
+name er navnet på det data, der bliver sendt fra et input
 Skal data sendes så skal name også være en del af input:
 <input type="text" name="username">
 
+<input type="submit"> knap der sender formularen (alt data indtastet inden)
+Denne sendknappe af formularen er nu mere fleksibel, du kan navngive den: <button type="submit">Send</button>
 “Formularen” = alle inputfelter inde i <form> + deres værdier
 
+
+<input type="text" name="username" required>:
+Feltet skal udfyldes før formularen kan sendes
+
+<input type="text" name="username" min="1">:
+Feltet skal mindst indeholde 1 for formularen kan sendes.
+
+<input type="text" name="username" max="100">:
+Feltet skal mindst indeholde 100 for formularen kan sendes.
+
+<input type="text" name="username" min="1" max="100">:
+Feltet skal mindst indeholde et tal fra intervallet [1; 100] for formularen kan sendes.
