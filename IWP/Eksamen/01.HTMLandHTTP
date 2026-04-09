@@ -1,1 +1,56 @@
+Semantisk markup: Strukturen og indholdet af siden.
+
+// HTML struktur //
+<!DOCTYPE html>: 
+Hengiver at kommende tekst er HTML. Brug hver gang du skal lave et HTML dokument.
+
+
+<html> </html>: 
+markerer start til slut af et HTML dokument. Lav hver gang inden du skal skrive i et HTML dokument.
+
+
+<head> </head>: 
+Indeholder information af dokumentet.
+- Titel i browser <title>IWP Test</title>
+- Karaktersæt i browser UTF-8? <meta charset="utf-8">
+- Brug af CSS eller JS? <link rel="stylesheet" href="css/style.css">
+
+<body> </body>:
+Alt indhold på selve siden.
+
+<header> </header>:
+Bruges til at markere introduktion/toppen af en sektion eller side. Har ingen visuel effekt. Ingen visuel effekt. kun for struktur og mening.
+
+<nav> </nav>: 
+Tag der bruges til navigation til andre links. 
+Eks.
+<nav>
+<a href="/html/">HTML</a>
+</nav>
+Ingen visuel effekt. kun for struktur og mening.
+href er selve linket som man navigerer brugeren til.
+Det mellem tagsene er det visuelt hvad linket hedder. Så i eksemplet hedder det HTML.
+ 
+<main> </main>:
+Boksen til det vigtigste indhold på siden. Ingen visuel effekt. Kun struktur og mening.
+
+<section> </section>:
+Bokse som bruges til at dele indholde tematisk op. Kan bruges flere gange. Ingen visuel effekt. Kun struktur og mening.
+
+<div> </div>:
+Bokse som bruges til at dele indholde op. Kan bruges flere gange. Ingen visuel effekt. Kun struktur og mening.
+
+<footer> </footer>:
+Boksen til afslutning af en side. Kontaktinfo, copyright osv. Ingen visuel effekt. Kun struktur og mening.
+
+
+// Indhold //
+<h1> </h1>:
+<h2> </h2>:
+<h3> </h3>:
+<h4> </h4>:
+<h5> </h5>:
+<h6> </h6>:
+Overskrift, jo større tal (1-6), desto større overskrift.
+
 
