@@ -61,4 +61,11 @@ Et link/klikbart element der refer dig til anden side. <a href="https://www.w3sc
 
 // Billeder //
 <img src="(path til billede)" alt="(tekst hvis billede ikke kan vises)"> (med src + alt):
-Tag til indsættelse af billede
+Tag til indsættelse af billede <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+
+<figure> </figure>:
+Boks til bilelder, illstruationer, grafer osv. Ingen visuel effekt. Kun struktur og mening.
+
+<figcaption> </figcaption>:
+tekst eller beskrivelse til en billeder, illustration eller graf. Samme visuel effekt som <p>. Brug kun inde i <figure>
