@@ -53,4 +53,12 @@ Boksen til afslutning af en side. Kontaktinfo, copyright osv. Ingen visuel effek
 <h6> </h6>:
 Overskrift, jo større tal (1-6), desto større overskrift.
 
+<p> </p>:
+"paragraph", bare tekst. 
 
+<a href="(link)"> </a>:
+Et link/klikbart element der refer dig til anden side. <a href="https://www.w3schools.com">Visit W3Schools</a>
+
+// Billeder //
+<img src="(path til billede)" alt="(tekst hvis billede ikke kan vises)"> (med src + alt):
+Tag til indsættelse af billede
