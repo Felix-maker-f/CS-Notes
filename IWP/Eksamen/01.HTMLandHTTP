@@ -59,13 +59,42 @@ Overskrift, jo større tal (1-6), desto større overskrift.
 <a href="(link)"> </a>:
 Et link/klikbart element der refer dig til anden side. <a href="https://www.w3schools.com">Visit W3Schools</a>
 
+
+
 // Billeder //
 <img src="(path til billede)" alt="(tekst hvis billede ikke kan vises)"> (med src + alt):
 Tag til indsættelse af billede <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
-
 
 <figure> </figure>:
 Boks til bilelder, illstruationer, grafer osv. Ingen visuel effekt. Kun struktur og mening.
 
 <figcaption> </figcaption>:
 tekst eller beskrivelse til en billeder, illustration eller graf. Samme visuel effekt som <p>. Brug kun inde i <figure>
+
+
+// Tabeller //
+<table> </table>:
+Strukturere i data i rækker og colonner. I tabeller. 
+Der bruges yderligere tags under denne boks.
+
+<caption> </caption>:
+Overskrift/titel for en tabel. 
+
+<thead> </thead>: 
+Headerdelen af tabellen. Bare en boks til den øverste del af tabellen. Ingen visuel effekt. Kun struktur og mening.
+
+<tbody> </tbody>:
+Bodycontent af tabellen. Boks til selve indholdet af tabellen. Ingen visuel effekt. Kun struktur og mening.
+
+<tfoot> </tfoot>:
+delen af en <table> der indeholder footer (fx totaler eller opsummering nederst). Ingen visuel effekt. Kun struktur og mening.
+
+<tr> </tr>:
+Definerer et row i en tabel. 
+
+<th> </th>:
+En celle med overskrift. 
+
+<td> </td>:
+En celle med data (selve værdierne)
+
