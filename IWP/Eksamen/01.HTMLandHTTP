@@ -101,7 +101,7 @@ En celle med data (selve værdierne)
 
 // Forms //
 <form> </form>:
-Boks til at indsamle brugerdata som er indtastet, eller til at sende faktisk også. Det inde i tagget kan du sende, 
+Boks til andre bokse til at indsamle brugerdata som er indtastet, eller til at sende faktisk også. Det inde i tagget kan du sende, 
 bare specifer action(hvor data skal hen) og method(hvordan det sendes).
 
 <form>
@@ -117,6 +117,15 @@ Når brugeren trykker sumbit sendes data som default til eget URL, med GET.
 Når brugeren trykker sumbit sendes data til URL i action og med POST method. 
 
 
+<input>:
+Boks hvor brugeren kan indtaste eller vælge data. 
 
+<input type="text"> tekstfelt
+<input type="number"> talfelt
+<input type="submit"> knap der sender formularen (alt data indtastet inden)
 
+Skal data sendes så skal name også være en del af input:
+<input type="text" name="username">
+
+“Formularen” = alle inputfelter inde i <form> + deres værdier
 
