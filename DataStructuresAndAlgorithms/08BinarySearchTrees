@@ -116,6 +116,13 @@ lokal ændring der bevarer BST property
 	•	left rotation
 	•	right rotation
 
+🧠 Intuition (1 linje)
+y op, x ned, β følger med
+⸻
+
+⚠️ Husk
+β er subtree mellem x og y
+
 🧠 Intuition
 👉 “løft en node op”
 👉 “skub en ned”
