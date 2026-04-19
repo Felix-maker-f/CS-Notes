@@ -34,7 +34,8 @@ Alle traversals:
 🔑 Definition: næste største element i BST
 
 🎯 Case 1: højre subtree findes
-👉 successor = minimum i højre subtree
+👉 successor = minimum i højre subtree.
+Gå til højre subtree, og så langt ned af dens venstre subtree. Hvis ikke den har et subtree, så tag dems værdi.
 
 🎯 Case 2: ingen højre subtree
 👉 gå op i træet:
