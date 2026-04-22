@@ -128,3 +128,111 @@ y op, x ned, β følger med
 👉 “skub en ned”
 ⸻
 
+🔴 RED-BLACK TREE — CORE
+Regler:
+1. Node er rød eller sort
+2. Root er sort
+3. Ingen rød → rød (ingen to røde i træk)
+4. Alle paths har samme antal sorte
+5. NIL er sort
+
+🔧 RB-INSERT (det du faktisk skal kunne)
+1. Indsæt som BST
+2. Ny node = RØD
+3. Fix hvis parent er rød
+
+🔥 CASES (kun det nødvendige)
+
+🟡 Case 1 — uncle er RØD
+parent → sort
+uncle → sort
+grandparent → rød
+z = grandparent (fortsæt op)
+
+🟠 Case 2 — uncle SORT + zig-zag
+z = parent
+rotation (modsat retning)
+→ bliver til case 3
+
+🟢 Case 3 — uncle SORT + straight
+parent → sort
+grandparent → rød
+rotation (på grandparent)
+→ DONE
+
+🔑 Husk
+Case 2 → Case 3
+Case 1 → kan loope op
+Root sættes sort til sidst
+
+
+🔧 RB-DELETE (det vigtige)
+1. Slet som BST
+2. Hvis slettet node var SORT → fix
+3. x = det der står tilbage (barn eller NIL)
+
+🧠 Hvad er problemet?
+En side mangler en sort node
+→ vi fixer med sibling
+
+OBS !!!! ROTATIONER KOMMER AN PÅ HVILKEN SIDE. KIG PÅ SLIDES FOR AT SIKRE DET DEN RIGTIGE ROTATE!!!
+🔥 CASES (hele spillet)
+
+🔴 Case 1 — sibling RØD
+sibling → sort
+parent → rød
+rotation på parent
+→ bliver til case 2/3/4
+
+
+🟡 Case 2 — sibling SORT, begge børn SORT
+sibling → rød
+x = parent
+→ loop op
+
+🟠 Case 3 — sibling SORT, indre barn RØD
+indre barn → sort
+sibling → rød
+rotation på sibling
+→ bliver til case 4
+
+🟢 Case 4 — sibling SORT, ydre barn RØD
+sibling får parent farve
+parent → sort
+ydre barn → sort
+rotation på parent
+→ DONE
+
+🔑 FLOW (det vigtigste du skal huske)
+Case 1 → gør sibling sort
+Case 2 → skub op
+Case 3 → gør klar til case 4
+Case 4 → løser problemet
+
+Case 1 → Case 2 / Case 3 / Case 4
+Case 2 → Case 1 / Case 2 / Case 3 / Case 4 / STOP (ved root)
+Case 3 → Case 4
+Case 4 → STOP
+
+
+🧠 ROTATION (kort og klart)
+Left rotate(x):
+→ højre barn op
+→ x ned til venstre
+
+Right rotate(x):
+→ venstre barn op
+→ x ned til højre
+
+⚠️ EKSTRA (som giver overblik)
+INSERT:
+→ problem = rød-rød
+→ vi skubber rød op
+
+DELETE:
+→ problem = mangler sort
+→ vi bruger sibling til at balancere
+
+
+
+
